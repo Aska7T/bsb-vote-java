@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shua;
+package bsb.vote.service;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,7 +27,7 @@ import org.json.JSONObject;
  *
  * @author Administrator
  */
-public class Shua {
+public class DoVote {
 
     /**
      * @throws java.io.IOException
@@ -71,7 +71,7 @@ public class Shua {
             //
             //hmBaidu(httpclient);
             catch (InterruptedException ex) {
-                Logger.getLogger(Shua.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(DoVote.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         

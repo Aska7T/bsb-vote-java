@@ -27,6 +27,11 @@ public class MainWindow extends javax.swing.JDialog {
     public MainWindow(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
+        buttonGroup1.add(naikaBtn);
+        buttonGroup1.add(dianbeiBtn);
+        
+        
         new Thread(new Runnable() {
             public void run() {
                 while (true) {                    
@@ -57,6 +62,7 @@ public class MainWindow extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         votedShow = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -72,6 +78,8 @@ public class MainWindow extends javax.swing.JDialog {
         startBtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        naikaBtn = new javax.swing.JRadioButton();
+        dianbeiBtn = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -128,6 +136,21 @@ public class MainWindow extends javax.swing.JDialog {
 
         jLabel7.setText("免责声明：使用本软件造成的法律问题，电脑问题，人身问题作者概不负责！");
 
+        naikaBtn.setSelected(true);
+        naikaBtn.setText("奶咖");
+        naikaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                naikaBtnActionPerformed(evt);
+            }
+        });
+
+        dianbeiBtn.setText("垫背");
+        dianbeiBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dianbeiBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -137,7 +160,7 @@ public class MainWindow extends javax.swing.JDialog {
                 .addComponent(jLabel7)
                 .addGap(0, 27, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
+                .addGap(70, 70, 70)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,17 +175,23 @@ public class MainWindow extends javax.swing.JDialog {
                                 .addGap(44, 44, 44)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(votedShow)
-                                    .addComponent(validShow, javax.swing.GroupLayout.Alignment.TRAILING))))
-                        .addGap(54, 54, 54)
+                                    .addComponent(validShow, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(naikaBtn, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(投票数量))
-                        .addGap(9, 9, 9)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(setVoteNum)
-                            .addComponent(setVID)
-                            .addComponent(setItemId, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(54, 54, 54)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(投票数量))
+                                .addGap(9, 9, 9)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(setVoteNum)
+                                    .addComponent(setVID)
+                                    .addComponent(setItemId, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addComponent(dianbeiBtn))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(100, 100, 100)
                         .addComponent(startBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -177,7 +206,11 @@ public class MainWindow extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(jLabel6)
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(naikaBtn)
+                    .addComponent(dianbeiBtn))
+                .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(votedShow)
@@ -195,9 +228,9 @@ public class MainWindow extends javax.swing.JDialog {
                     .addComponent(validShow)
                     .addComponent(投票数量)
                     .addComponent(setVoteNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addComponent(startBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
+                .addComponent(startBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
                 .addContainerGap())
         );
@@ -217,6 +250,16 @@ public class MainWindow extends javax.swing.JDialog {
     private void setItemIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setItemIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_setItemIdActionPerformed
+
+    private void naikaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naikaBtnActionPerformed
+        // TODO add your handling code here:
+            setItemId.setText("3325");
+    }//GEN-LAST:event_naikaBtnActionPerformed
+
+    private void dianbeiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dianbeiBtnActionPerformed
+        // TODO add your handling code here:
+            setItemId.setText("3314");
+    }//GEN-LAST:event_dianbeiBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,6 +304,8 @@ public class MainWindow extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JRadioButton dianbeiBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -268,6 +313,7 @@ public class MainWindow extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JRadioButton naikaBtn;
     private javax.swing.JLabel regShow;
     private javax.swing.JTextField setItemId;
     private javax.swing.JTextField setVID;

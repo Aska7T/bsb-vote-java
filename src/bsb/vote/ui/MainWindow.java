@@ -6,6 +6,11 @@
 
 package bsb.vote.ui;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.json.JSONException;
+
 /**
  *
  * @author Administrator
@@ -15,9 +20,27 @@ public class MainWindow extends javax.swing.JDialog {
     /**
      * Creates new form MainWindow
      */
+    public static int regNum = 0;
+    public static int validNum = 0;
+    public static int voteNum = 0;
     public MainWindow(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        new Thread(new Runnable() {
+            public void run() {
+                while (true) {                    
+                    try {
+                        validShow.setText(String.valueOf(validNum));
+                        regShow.setText(String.valueOf(regNum));
+                        votedShow.setText(String.valueOf(voteNum));
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                
+            }
+        }).start();
     }
 
     /**
@@ -41,7 +64,7 @@ public class MainWindow extends javax.swing.JDialog {
         setItemId = new javax.swing.JTextField();
         setVID = new javax.swing.JTextField();
         setVoteNum = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        startBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -73,15 +96,25 @@ public class MainWindow extends javax.swing.JDialog {
         投票数量.setText("投票数量:");
 
         setItemId.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
-        setItemId.setText("0");
+        setItemId.setText("3352");
+        setItemId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setItemIdActionPerformed(evt);
+            }
+        });
 
         setVID.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
-        setVID.setText("0");
+        setVID.setText("374");
 
         setVoteNum.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
-        setVoteNum.setText("0");
+        setVoteNum.setText("3");
 
-        jButton1.setText("开始投票");
+        startBtn.setText("开始投票");
+        startBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,7 +146,7 @@ public class MainWindow extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(148, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(startBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(142, 142, 142))
         );
         layout.setVerticalGroup(
@@ -144,12 +177,25 @@ public class MainWindow extends javax.swing.JDialog {
                     .addComponent(投票数量)
                     .addComponent(setVoteNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addComponent(startBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
                 .addGap(23, 23, 23))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    private void startBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtnActionPerformed
+        // TODO add your handling code here:
+        new Thread(new Runnable() {
+            public void run() {
+                service.DoVote.doVote(Integer.parseInt(setVoteNum.getText().trim()),setItemId.getText().trim(),setVID.getText().trim());
+            }
+        }).start();
+//        service.DoVote.doVote(Integer.parseInt(setVoteNum.getText().trim()),setItemId.getText().trim(),setVID.getText().trim());
+    }//GEN-LAST:event_startBtnActionPerformed
+
+    private void setItemIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setItemIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_setItemIdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,7 +240,6 @@ public class MainWindow extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -204,6 +249,7 @@ public class MainWindow extends javax.swing.JDialog {
     private javax.swing.JTextField setItemId;
     private javax.swing.JTextField setVID;
     private javax.swing.JTextField setVoteNum;
+    private javax.swing.JButton startBtn;
     private javax.swing.JLabel validShow;
     private javax.swing.JLabel votedShow;
     private javax.swing.JLabel 投票数量;

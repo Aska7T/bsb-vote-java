@@ -22,6 +22,7 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONException;
 import org.json.JSONObject;
+import ui.MainWindow;
 
 /**
  *
@@ -30,13 +31,11 @@ import org.json.JSONObject;
 public class DoVote {
 
     /**
-     * @throws java.io.IOException
+     * @param VOTE_NUM
+     * @param ITEM_ID
+     * @param V_ID
      */
-    public static int VOTE_NUM = 650;
-    public static String ITEM_ID = "3293";
-    public static String V_ID = "373";
-  
-    public static void main(String[] args) throws IOException, JSONException {
+    public static void doVote(int VOTE_NUM, String ITEM_ID, String V_ID){
         // TODO code application logic here
         DefaultHttpClient httpclient = new DefaultHttpClient();
         //设置代理开始。如果代理服务器需要验证的话，可以修改用户名和密码  
@@ -52,35 +51,36 @@ public class DoVote {
             try {
                 httpclient.getCookieStore().clear();
                 Thread.sleep(2000);
-                regUser(httpclient);
+                try {
+                    if (regUser(httpclient)) {
+                        MainWindow.regNum++;
+                    }
+                } catch (IOException | JSONException ex) {
+                    Logger.getLogger(DoVote.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 Thread.sleep(500);
-                vote(httpclient);
+                try {
+                    if(vote(httpclient,ITEM_ID, V_ID)){
+                        MainWindow.validNum++;
+                    }
+                } catch (IOException ex) {
+                    Logger.getLogger(DoVote.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 j++;
                 if(j==18){
                     Thread.sleep(90000);
                     j=0;
                 }
             }
-//        Scanner scanner = new Scanner(System.in);
-//        if("1".equals(scanner.nextLine())){
-//             
-//             if("2".equals(scanner.nextLine())){
-//                 
-//             }
-//        }
-            //
-            //hmBaidu(httpclient);
             catch (InterruptedException ex) {
                 Logger.getLogger(DoVote.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
-        
         //关闭连接
         httpclient.getConnectionManager ().shutdown();
     }
     //注册用户
-    private static void regUser(DefaultHttpClient httpclient) throws UnsupportedEncodingException, IOException, JSONException {
+    private static boolean regUser(DefaultHttpClient httpclient) throws UnsupportedEncodingException, IOException, JSONException {
 //        httpclient.getParams().setParameter(ClientPNames.COOKIE_POLICY, CookiePolicy.ACCEPT_ALL);  
         HttpPost httppost = new HttpPost("http://m.passport.cntv.cn/site/reg");
         System.out.println("请求: " + httppost.getRequestLine());
@@ -116,22 +116,6 @@ public class DoVote {
 
         //获取响应信息
         HttpEntity entity = response.getEntity();
-//        System.out.println("----------------------------------------");
-//        System.out.println(response.getStatusLine());
-//        if (entity != null) {
-//            System.out.println("Response content length: " + entity.getContentLength());
-//        }
-        // 显示结果   
-//        BufferedReader reader = new BufferedReader(new InputStreamReader(entity.getContent(), "UTF-8"));
-//        String line = null;
-//        System.out.println("注册结果+++++++++++++++++++++++++++");
-//        while ((line = reader.readLine()) != null) {
-//            System.out.println(line);
-//        }
-//        
-//        if (entity != null) {
-//            entity.consumeContent();
-//        }
         // 显示结果   
         BufferedReader reader = new BufferedReader(new InputStreamReader(entity.getContent(), "UTF-8"));
         StringBuilder builder = new StringBuilder();
@@ -142,29 +126,15 @@ public class DoVote {
         } 
         try {
             JSONObject jsonObject = new JSONObject(builder.toString());
-            System.out.println("+++++++++++++++++++++\n" + jsonObject.getString("error"));
+            System.out.println("+++++++++++++++++++++\n" + jsonObject.getInt("error"));
             System.out.println("--------" + jsonObject.getString("msg"));
+            return jsonObject.getInt("error")==0;
         } catch (JSONException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            return false;
         }
-        if (entity != null) {
-            entity.consumeContent();
-        }
-
-        //打印cookie
-//        CookieSpec cookiespec;
-//        List cookies = httpclient.getCookieStore().getCookies();
-//        if (cookies.size() == 0) {
-//            System.out.println("None");
-//        } else {
-//            for (int i = 0; i < cookies.size(); i++) {
-//                System.out.println(cookies.get(i).toString());
-//            }
-//        }
     }
     //投票
-    private static void vote(DefaultHttpClient httpclient) throws UnsupportedEncodingException, IOException {
+    private static boolean vote(DefaultHttpClient httpclient, String ITEM_ID, String V_ID) throws UnsupportedEncodingException, IOException {
 //        HttpGet httpget = new HttpGet("http://qr.cntv.cn/bsb/vote/Post?itemid=3249&vid=366");
         HttpGet httpget = new HttpGet("http://qr.cntv.cn/bsb/vote/Post?itemid="+ITEM_ID+"&vid="+V_ID);
         System.out.println("请求: " + httpget.getRequestLine());
@@ -189,11 +159,6 @@ public class DoVote {
 
         // 执行   
         HttpEntity entity = response.getEntity();
-//        System.out.println("----------------------------------------");
-//        System.out.println(response.getStatusLine());
-//        if (entity != null) {
-//            System.out.println("Response content length: " + entity.getContentLength());
-//        }
        // 显示结果   
         BufferedReader reader = new BufferedReader(new InputStreamReader(entity.getContent(), "UTF-8"));
         StringBuilder builder = new StringBuilder();
@@ -204,25 +169,11 @@ public class DoVote {
         } 
         try {
             JSONObject jsonObject = new JSONObject(builder.toString());
-            System.out.println("+++++++++++++++++++++\n" + jsonObject.getString("error"));
+            System.out.println("+++++++++++++++++++++\n" + jsonObject.getInt("error"));
             System.out.println("--------" + jsonObject.getString("msg"));
+            return jsonObject.getInt("error")==0;
         } catch (JSONException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            return false;
         }
-        if (entity != null) {
-            entity.consumeContent();
-        }
-        //打印cookie
-//        CookieSpec cookiespec;
-//        List cookies = httpclient.getCookieStore().getCookies();
-//        if (cookies.size() == 0) {
-//            System.out.println("None");
-//        } else {
-//            for (int i = 0; i < cookies.size(); i++) {
-//                System.out.println(cookies.get(i).toString());
-//            }
-//        }
-        
     }
 }

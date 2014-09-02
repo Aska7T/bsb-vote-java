@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
     </Component>
   </NonVisualComponents>
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -27,66 +27,70 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="27" max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                              <Component id="regShow" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                      <Component id="regShow" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="votedShow" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="validShow" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="naikaBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="投票数量" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="setVoteNum" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="setVID" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="setItemId" alignment="0" min="-2" pref="76" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                      <Component id="dianbeiBtn" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="votedShow" min="-2" max="-2" attributes="0"/>
-                                  <Component id="validShow" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="naikaBtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="投票数量" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="setVoteNum" max="32767" attributes="0"/>
-                                  <Component id="setVID" max="32767" attributes="0"/>
-                                  <Component id="setItemId" min="-2" pref="76" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                              <Component id="dianbeiBtn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
+                              <Component id="startBtn" min="-2" pref="110" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                      <Component id="startBtn" min="-2" pref="110" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -131,12 +135,71 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel6">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="&#x5b8b;&#x4f53;" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#x699c;&#x4e0a;&#x699c;&#x6295;&#x7968;&#x5927;&#x5e08;&#x7b80;&#x88c5;&#x7248;V1.2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="startBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x5f00;&#x59cb;&#x6295;&#x7968;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="setItemId">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="3325"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="setItemIdActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="&#x6295;&#x7968;&#x6570;&#x91cf;">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#x6295;&#x7968;&#x6570;&#x91cf;:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="setVoteNum">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="3"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="setVID">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="374"/>
+      </Properties>
+    </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#x6295;&#x7968;&#x6b21;&#x6570;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="validShow">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="votedShow">
@@ -155,7 +218,23 @@
         <Property name="text" type="java.lang.String" value="&#x6709;&#x6548;&#x6295;&#x7968;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="validShow">
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="vid:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="item id:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="regShow">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
@@ -169,86 +248,6 @@
           <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#x6ce8;&#x518c;&#x6570;&#x91cf;"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="regShow">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="0"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="item id:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="vid:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="&#x6295;&#x7968;&#x6570;&#x91cf;">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="&#x6295;&#x7968;&#x6570;&#x91cf;:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="setItemId">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="3325"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="setItemIdActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="setVID">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="374"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="setVoteNum">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="&#x5b8b;&#x4f53;" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="3"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="startBtn">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#x5f00;&#x59cb;&#x6295;&#x7968;"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startBtnActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="&#x5b8b;&#x4f53;" size="18" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="&#x699c;&#x4e0a;&#x699c;&#x6295;&#x7968;&#x5927;&#x5e08;&#x7b80;&#x88c5;&#x7248;V1.1"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#x514d;&#x8d23;&#x58f0;&#x660e;&#xff1a;&#x4f7f;&#x7528;&#x672c;&#x8f6f;&#x4ef6;&#x9020;&#x6210;&#x7684;&#x6cd5;&#x5f8b;&#x95ee;&#x9898;&#xff0c;&#x7535;&#x8111;&#x95ee;&#x9898;&#xff0c;&#x4eba;&#x8eab;&#x95ee;&#x9898;&#x4f5c;&#x8005;&#x6982;&#x4e0d;&#x8d1f;&#x8d23;&#xff01;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="naikaBtn">
@@ -267,6 +266,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dianbeiBtnActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x514d;&#x8d23;&#x58f0;&#x660e;&#xff1a;&#x4f7f;&#x7528;&#x672c;&#x8f6f;&#x4ef6;&#x9020;&#x6210;&#x7684;&#x6cd5;&#x5f8b;&#x95ee;&#x9898;&#xff0c;&#x7535;&#x8111;&#x95ee;&#x9898;&#xff0c;&#x4eba;&#x8eab;&#x95ee;&#x9898;&#x4f5c;&#x8005;&#x6982;&#x4e0d;&#x8d1f;&#x8d23;&#xff01;"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

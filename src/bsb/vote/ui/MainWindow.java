@@ -23,6 +23,7 @@ public class MainWindow extends javax.swing.JDialog {
     public static int regNum = 0;
     public static int validNum = 0;
     public static int voteNum = 0;
+    public static boolean startFlag = true;
     public MainWindow(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -33,6 +34,10 @@ public class MainWindow extends javax.swing.JDialog {
                         validShow.setText(String.valueOf(validNum));
                         regShow.setText(String.valueOf(regNum));
                         votedShow.setText(String.valueOf(voteNum));
+                        startBtn.setEnabled(startFlag);
+                        setItemId.setEnabled(startFlag);
+                        setVID.setEnabled(startFlag);
+                        setVoteNum.setEnabled(startFlag);
                         Thread.sleep(1000);
                     } catch (InterruptedException ex) {
                         Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
@@ -65,6 +70,8 @@ public class MainWindow extends javax.swing.JDialog {
         setVID = new javax.swing.JTextField();
         setVoteNum = new javax.swing.JTextField();
         startBtn = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -96,7 +103,7 @@ public class MainWindow extends javax.swing.JDialog {
         投票数量.setText("投票数量:");
 
         setItemId.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
-        setItemId.setText("3352");
+        setItemId.setText("3325");
         setItemId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setItemIdActionPerformed(evt);
@@ -116,69 +123,83 @@ public class MainWindow extends javax.swing.JDialog {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
+        jLabel6.setText("榜上榜投票大师简装版V1.1");
+
+        jLabel7.setText("免责声明：使用本软件造成的法律问题，电脑问题，人身问题作者概不负责！");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(22, 22, 22)
+                .addComponent(jLabel7)
+                .addGap(0, 27, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(votedShow)
-                            .addComponent(validShow)
-                            .addComponent(regShow)))
-                    .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(44, 44, 44)
+                                .addComponent(regShow))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2))
+                                .addGap(44, 44, 44)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(votedShow)
+                                    .addComponent(validShow, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
                             .addComponent(投票数量))
                         .addGap(9, 9, 9)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(setVoteNum, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(setVoteNum)
                             .addComponent(setVID)
-                            .addComponent(setItemId))))
+                            .addComponent(setItemId, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(startBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(148, Short.MAX_VALUE)
-                .addComponent(startBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(142, 142, 142))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(119, 119, 119))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
+                .addComponent(jLabel6)
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(votedShow))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(validShow))
+                    .addComponent(votedShow)
+                    .addComponent(jLabel4)
+                    .addComponent(setItemId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(regShow))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(setItemId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(regShow)
                     .addComponent(jLabel5)
                     .addComponent(setVID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(validShow)
                     .addComponent(投票数量)
                     .addComponent(setVoteNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(startBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-                .addGap(23, 23, 23))
+                .addGap(33, 33, 33)
+                .addComponent(startBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addContainerGap())
         );
 
         pack();
@@ -187,7 +208,7 @@ public class MainWindow extends javax.swing.JDialog {
         // TODO add your handling code here:
         new Thread(new Runnable() {
             public void run() {
-                service.DoVote.doVote(Integer.parseInt(setVoteNum.getText().trim()),setItemId.getText().trim(),setVID.getText().trim());
+                bsb.vote.service.DoVote.doVote(Integer.parseInt(setVoteNum.getText().trim()),setItemId.getText().trim(),setVID.getText().trim());
             }
         }).start();
 //        service.DoVote.doVote(Integer.parseInt(setVoteNum.getText().trim()),setItemId.getText().trim(),setVID.getText().trim());
@@ -245,6 +266,8 @@ public class MainWindow extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel regShow;
     private javax.swing.JTextField setItemId;
     private javax.swing.JTextField setVID;

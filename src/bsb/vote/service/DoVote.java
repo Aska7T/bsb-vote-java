@@ -22,7 +22,7 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONException;
 import org.json.JSONObject;
-import ui.MainWindow;
+import bsb.vote.ui.MainWindow;
 
 /**
  *
@@ -37,6 +37,7 @@ public class DoVote {
      */
     public static void doVote(int VOTE_NUM, String ITEM_ID, String V_ID){
         // TODO code application logic here
+        MainWindow.startFlag=false;
         DefaultHttpClient httpclient = new DefaultHttpClient();
         //设置代理开始。如果代理服务器需要验证的话，可以修改用户名和密码  
         //192.168.1.107为代理地址 808为代理端口 UsernamePasswordCredentials后的两个参数为代理的用户名密码  
@@ -44,11 +45,16 @@ public class DoVote {
         HttpHost proxy = new HttpHost("127.0.0.1", 8888);
         httpclient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxy);
         //设置代理结束
+        MainWindow.voteNum=0;
+        MainWindow.regNum=0;
+        MainWindow.validNum=0;
+        
         int j = 0;
         
         //注册
         for(int i=0;i<VOTE_NUM;i++){
             try {
+                MainWindow.voteNum++;
                 httpclient.getCookieStore().clear();
                 Thread.sleep(2000);
                 try {
@@ -76,6 +82,7 @@ public class DoVote {
                 Logger.getLogger(DoVote.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        MainWindow.startFlag=true;
         //关闭连接
         httpclient.getConnectionManager ().shutdown();
     }

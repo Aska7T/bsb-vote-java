@@ -48,7 +48,6 @@ public class DoVote {
         MainUI.voteNum=0;
         MainUI.regNum=0;
         MainUI.validNum=0;
-        
         int j = 0;
         
         //注册
@@ -56,7 +55,7 @@ public class DoVote {
             try {
                 MainUI.voteNum++;
                 httpclient.getCookieStore().clear();
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 try {
                     if (regUser(httpclient)) {
                         MainUI.regNum++;
@@ -73,8 +72,8 @@ public class DoVote {
                     Logger.getLogger(DoVote.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 j++;
-                if(j==18){
-                    Thread.sleep(90000);
+                if(j==15){
+                    Thread.sleep(60000*3);
                     j=0;
                 }
             }

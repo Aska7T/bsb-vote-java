@@ -105,7 +105,7 @@ public class MainUI extends javax.swing.JFrame {
         投票数量.setText("投票数量:");
 
         setVoteNum.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
-        setVoteNum.setText("3");
+        setVoteNum.setText("18");
 
         setVID.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         setVID.setText("374");

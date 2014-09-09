@@ -59,6 +59,8 @@ public class DoVote {
                 try {
                     if (regUser(httpclient)) {
                         MainUI.regNum++;
+                    }else{
+                        continue;
                     }
                 } catch (IOException | JSONException ex) {
                     Logger.getLogger(DoVote.class.getName()).log(Level.SEVERE, null, ex);
@@ -73,7 +75,7 @@ public class DoVote {
                 }
                 j++;
                 if(j==15){
-                    Thread.sleep(60000*3);
+                    Thread.sleep(60000*2);
                     j=0;
                 }
             }
@@ -134,7 +136,16 @@ public class DoVote {
             JSONObject jsonObject = new JSONObject(builder.toString());
             System.out.println("+++++++++++++++++++++\n" + jsonObject.getInt("error"));
             System.out.println("--------" + jsonObject.getString("msg"));
-            return jsonObject.getInt("error")==0;
+            if(jsonObject.getInt("error")!=0){
+                try {
+                    Thread.sleep(60000*3);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(DoVote.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                return false;
+            }else{
+                return true;
+            }
         } catch (JSONException e) {
             return false;
         }
@@ -176,10 +187,22 @@ public class DoVote {
         try {
             JSONObject jsonObject = new JSONObject(builder.toString());
             System.out.println("+++++++++++++++++++++\n" + jsonObject.getInt("error"));
-            System.out.println("--------" + jsonObject.getString("msg"));
-            return jsonObject.getInt("error")==0;
+            System.out.println(jsonObject.getString("msg"));
+            if(jsonObject.getInt("error")==0){
+                if( "成功参与投票，本轮投票将获得1积分".equals(jsonObject.getString("msg"))){
+                    return  true;
+                }else{
+                    try {
+                        Thread.sleep(60000*3);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(DoVote.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    return  false;
+                }
+            }
         } catch (JSONException e) {
             return false;
         }
+        return false;
     }
 }

@@ -37,7 +37,7 @@ public class MainUI extends javax.swing.JFrame {
                         setItemId.setEnabled(startFlag);
                         setVID.setEnabled(startFlag);
                         setVoteNum.setEnabled(startFlag);
-                        Thread.sleep(1000);
+                        Thread.sleep(1500);
                     } catch (InterruptedException ex) {
                         Logger.getLogger(MainUI.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -84,7 +84,7 @@ public class MainUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel6.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
-        jLabel6.setText("榜上榜投票大师简装版V1.2");
+        jLabel6.setText("榜上榜投票大师简装版V1.3");
 
         startBtn.setText("开始投票");
         startBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +94,7 @@ public class MainUI extends javax.swing.JFrame {
         });
 
         setItemId.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
-        setItemId.setText("3325");
+        setItemId.setText("3397");
         setItemId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setItemIdActionPerformed(evt);
@@ -105,10 +105,10 @@ public class MainUI extends javax.swing.JFrame {
         投票数量.setText("投票数量:");
 
         setVoteNum.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
-        setVoteNum.setText("18");
+        setVoteNum.setText("150");
 
         setVID.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
-        setVID.setText("374");
+        setVID.setText("381");
 
         jLabel1.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         jLabel1.setText("投票次数");
@@ -238,6 +238,7 @@ public class MainUI extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void startBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtnActionPerformed

@@ -42,6 +42,7 @@ public class DoVote {
         // TODO code application logic here
         MainUI.startFlag=false;
         DefaultHttpClient httpclient = new DefaultHttpClient();
+        
         //设置代理开始。如果代理服务器需要验证的话，可以修改用户名和密码  
         //192.168.1.107为代理地址 808为代理端口 UsernamePasswordCredentials后的两个参数为代理的用户名密码  
 //        httpclient.getCredentialsProvider().setCredentials(new AuthScope("127.0.0.1", 8888), new UsernamePasswordCredentials("", ""));

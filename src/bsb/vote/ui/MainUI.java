@@ -22,9 +22,7 @@ public class MainUI extends javax.swing.JFrame {
     public static boolean startFlag = true;
     public MainUI() {
         initComponents();
-        buttonGroup1.add(naikaBtn);
-        buttonGroup1.add(dianbeiBtn);
-        
+               
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -62,7 +60,6 @@ public class MainUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel6 = new javax.swing.JLabel();
         startBtn = new javax.swing.JButton();
         setItemId = new javax.swing.JTextField();
@@ -77,14 +74,12 @@ public class MainUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         regShow = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        naikaBtn = new javax.swing.JRadioButton();
-        dianbeiBtn = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel6.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
-        jLabel6.setText("榜上榜投票大师简装版V1.3");
+        jLabel6.setText("榜上榜投票大师简装版V1.5");
 
         startBtn.setText("开始投票");
         startBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +100,7 @@ public class MainUI extends javax.swing.JFrame {
         投票数量.setText("投票数量:");
 
         setVoteNum.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
-        setVoteNum.setText("150");
+        setVoteNum.setText("300");
 
         setVID.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         setVID.setText("381");
@@ -133,21 +128,6 @@ public class MainUI extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         jLabel3.setText("注册数量");
-
-        naikaBtn.setSelected(true);
-        naikaBtn.setText("奶咖");
-        naikaBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                naikaBtnActionPerformed(evt);
-            }
-        });
-
-        dianbeiBtn.setText("垫背");
-        dianbeiBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dianbeiBtnActionPerformed(evt);
-            }
-        });
 
         jLabel7.setText("免责声明：使用本软件造成的法律问题，电脑问题，人身问题作者概不负责！");
 
@@ -177,23 +157,17 @@ public class MainUI extends javax.swing.JFrame {
                                         .addGap(44, 44, 44)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(votedShow)
-                                            .addComponent(validShow, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                    .addComponent(naikaBtn, javax.swing.GroupLayout.Alignment.TRAILING))
+                                            .addComponent(validShow, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                .addGap(54, 54, 54)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(54, 54, 54)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel5)
-                                            .addComponent(投票数量))
-                                        .addGap(9, 9, 9)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(setVoteNum)
-                                            .addComponent(setVID)
-                                            .addComponent(setItemId, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(80, 80, 80)
-                                        .addComponent(dianbeiBtn))))
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(投票数量))
+                                .addGap(9, 9, 9)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(setVoteNum)
+                                    .addComponent(setVID)
+                                    .addComponent(setItemId, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(160, 160, 160)
                                 .addComponent(startBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -208,11 +182,7 @@ public class MainUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(naikaBtn)
-                    .addComponent(dianbeiBtn))
-                .addGap(17, 17, 17)
+                .addGap(58, 58, 58)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(votedShow)
@@ -256,16 +226,6 @@ public class MainUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_setItemIdActionPerformed
 
-    private void naikaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naikaBtnActionPerformed
-        // TODO add your handling code here:
-        setItemId.setText("3325");
-    }//GEN-LAST:event_naikaBtnActionPerformed
-
-    private void dianbeiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dianbeiBtnActionPerformed
-        // TODO add your handling code here:
-        setItemId.setText("3314");
-    }//GEN-LAST:event_dianbeiBtnActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -302,8 +262,6 @@ public class MainUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JRadioButton dianbeiBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -311,7 +269,6 @@ public class MainUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JRadioButton naikaBtn;
     private javax.swing.JLabel regShow;
     private javax.swing.JTextField setItemId;
     private javax.swing.JTextField setVID;
